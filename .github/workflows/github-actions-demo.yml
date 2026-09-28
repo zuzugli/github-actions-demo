@@ -1,10 +1,10 @@
 name: GitHub Actions Demo
-on:
-  schedule:
-    - cron: '* * * * *'
+on: workflow_dispatch
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: python job.py
+      - run: echo "Ceci est un fichier généré par la pipeline!" > output.txt
+      - run: cat output.txt
